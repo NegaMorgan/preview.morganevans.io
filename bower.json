@@ -1,0 +1,26 @@
+{
+  "name": "package",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "2.1.4",
+    "queryloader2": "~3.0.15",
+    "modernizr": "2.8.3",
+    "animate.css": "~3.4.0",
+    "bootstrap": "3.3.5",
+    "waypoints": "2.0.5"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    },
+    "waypoints": {
+      "main": [
+        "waypoints.js",
+        "shortcuts/sticky-elements/waypoints-sticky.js"
+      ]
+    }
+  }
+}
