@@ -1,8 +1,8 @@
-# morganevans.io
+# preview.morganevans.io
 
 ## Developing
 
-morganevans.io is a static web application. It uses Gulp as a build tool to compile Sass. Gulp also does all the nice things you expect from production-ready code, concatenating and minifying files, prefixing CSS, and optimizing images.
+morganevans.io is a static web page. It uses Gulp as a build tool to prepare files, prefix CSS, and optimize images.
 
 Development dependencies are NPM, Bower, and Gulp.
 
@@ -29,3 +29,14 @@ From there, you can publish to GitHub pages or a webserver.
 ```bash
 git subtree push --prefix dist origin gh-pages
 ```
+
+## To Do
+
+* Switch to a new theme; requirements:
+     - uses a CSS organization system, such as smacss or bem
+     - uses ems for sizing
+     - uses sass + color variables
+* Reduce the page size-- uncss + google cdn assets?
+* Add some basic tests of functionality
+* Debug + improve build pipeline; commit hooks; maybe travis
+* Move to AWS S3
