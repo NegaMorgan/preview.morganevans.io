@@ -9045,9 +9045,6 @@ Onepage Homepages --------------------*/
 #summary {
   display: none; }
 
-#summary p {
-  text-align: center; }
-
 #summary p:first-child {
   font-size: 1.5em; }
 
