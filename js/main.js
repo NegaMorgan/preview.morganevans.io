@@ -8,25 +8,15 @@
   // document is ready
 
     var $form = $( '#contact-form' );
-    var $summary = $( '#contactus #summary' );
-    var $summaryCopy = $( '#contactus #summary p:first-child' );
-    var $retry = $( '#contactus #summary a' );
+    var $summary = $( '#contact #summary' );
+    var $summaryCopy = $( '#contact #summary p:first-child' );
 
     $form.submit(function(e) {
-      var active = $('input[type="radio"][name="optionsRadios"]:checked');
-      if ( active.length > 0 ) {
-        toggleSection($form, $summary);
-        getContent(active.val());
-      }
+      var opt = $('input[type="radio"][name="optionsRadios"]:checked');
+      toggleSection($form, $summary);
+      getContent(opt);
       e.preventDefault();
-    });
-
-    $retry.click(reloadForm);
-
-    function reloadForm() {
-      $summaryCopy.empty();
-      toggleSection($summary, $form);      
-    }
+    });    
 
     function toggleSection($previousSection, $newSection) {
       $previousSection.hide();
@@ -34,20 +24,24 @@
     }
 
     function getContent(key) {
-      if ( 'option' + 4 === key ) {
-        $summaryCopy.append(copyB);
-      } else {
+      if ( key.length > 0 ) {
         $summaryCopy.append(copyA);
+      } else {
+        $summaryCopy.append(copyB);
       }
     }
 
+    function sendTo(address) {
+      return '<a href="mailto:' + address + '">' + address + '</a>';
+    }
+
     function copyA() {
-      return 'Sorry, I only accept inquiries from humans at this time.';
+      return 'Thank you for your inquiry!';
     }
 
     function copyB() {
-      var section = $( '#contactus h2' ).html().toLowerCase();
-      return section.concat('&#6','4;','evans','.','uno');
+      var section = $summary.parent().attr('id').toLowerCase();
+      return sendTo(section.concat('&#6','4;','evans','.','uno'));
     }
 
   });

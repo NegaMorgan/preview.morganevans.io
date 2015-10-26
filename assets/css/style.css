@@ -7021,6 +7021,9 @@ Onepage Homepages --------------------*/
   font-size: 14em;
   color: #009688; }
 
+#contact-form .radio {
+  display: none; }
+
 .section-simple {
   border-bottom: 3px solid #eaeaea; }
 
